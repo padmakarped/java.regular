@@ -1,4 +1,4 @@
-package Input.Output;
+package FileHandling.Output;
 
 public class TestIO {
 
