@@ -4,8 +4,9 @@ public class input {
 
         int num = 12345;
 
-        while (num > 0) {
-            int digit = num % 10;   // extract last digit
+        while (num > 0) 
+        {
+            int Digit = num % 10;   // extract last digit
             System.out.print(" "+num);
             num = num / 10; 
 

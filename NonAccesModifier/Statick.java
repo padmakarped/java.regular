@@ -50,5 +50,37 @@ public class Statick {
 
     }
     
+
+
+
+//     static String companyname;
+//     int id;
+//     String name;
+//     String department;
+//     double salary; 
+    
+//     public Statick(int id, String name, String department, double salary)
+//     {
+//         this.id=id;
+//         this.name=name;
+//         this.department=department;
+//         this.salary=salary;
+//     }
+
+//     void display()
+//     {
+//         System.out.println("companyname:"+companyname);
+//         System.out.println("id:"+id);
+//         System.out.println("name:"+name);
+//         System.out.println("department:"+department);
+//         System.out.println("salary:"+salary);
+//     }
+// public static void main(String[] args) {
+
+//     Statick e1=new Statick(1,"padmakar","computer",50000);
+//     Statick.companyname="infosis";
+//     e1.display();
+// }
+
     
 }
