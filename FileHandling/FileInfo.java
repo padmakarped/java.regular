@@ -1,0 +1,22 @@
+package FileHandling;
+
+import java.io.File;
+
+public class FileInfo {
+
+    public static void main(String[] args) {
+
+        File f1=new File("C:\\Users\\HP\\OneDrive\\Desktop\\sample.txt");
+
+        if(f1.exists())
+        {
+            System.out.println("File Name :"+f1.getName());
+            System.out.println("File Location :"+f1.getAbsolutePath());
+            System.out.println("File Readable :"+f1.canRead()); 
+            System.out.println("file Writable :"+f1.canWrite());
+            System.out.println("file Size :"+f1.length());
+         }
+        
+    }
+    
+}

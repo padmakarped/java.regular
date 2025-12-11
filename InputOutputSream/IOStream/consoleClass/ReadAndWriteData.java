@@ -1,4 +1,4 @@
-package FileHandling.IOStream.consoleClass;
+package InputOutputSream.IOStream.consoleClass;
 
 import java.io.Console;
 

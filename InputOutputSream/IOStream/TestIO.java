@@ -1,4 +1,4 @@
-package FileHandling.IOStream;
+package InputOutputSream.IOStream;
 
 public class TestIO {
 

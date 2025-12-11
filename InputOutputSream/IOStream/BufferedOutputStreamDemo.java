@@ -1,4 +1,4 @@
-package FileHandling.IOStream;
+package InputOutputSream.IOStream;
 
 import java.io.FileOutputStream;
 import java.io.BufferedOutputStream;

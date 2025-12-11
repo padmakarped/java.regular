@@ -1,4 +1,4 @@
-package FileHandling.javaExamtoday;
+package InputOutputSream.javaExamtoday;
 
 import java.util.Scanner;
 

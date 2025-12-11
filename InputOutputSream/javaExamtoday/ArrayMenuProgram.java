@@ -1,4 +1,4 @@
-package FileHandling.javaExamtoday;
+package InputOutputSream.javaExamtoday;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

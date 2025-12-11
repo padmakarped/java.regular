@@ -1,4 +1,4 @@
-package FileHandling.IOStream.ReaderAndWriterClasses;
+package InputOutputSream.IOStream.ReaderAndWriterClasses;
 
 import java.io.FileReader;
 import java.io.Reader;

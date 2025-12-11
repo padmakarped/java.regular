@@ -1,6 +1,4 @@
-package FileHandling;
-
-import java.util.Scanner;
+package InputOutputSream;
 
 public class IsPrime {
     

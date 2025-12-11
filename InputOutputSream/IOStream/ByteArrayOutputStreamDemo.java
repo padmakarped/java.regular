@@ -1,6 +1,6 @@
 
 
-package FileHandling.IOStream;
+package InputOutputSream.IOStream;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
