@@ -6,12 +6,6 @@ public abstract class abstractkey {
     //abstract method means incomplete code
     abstract void run(String username,String password); 
 
-
-
-
-
-    
-    
 }
 
 
