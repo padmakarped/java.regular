@@ -7,7 +7,7 @@ public class GenericsObject {
 
     public static void main(String[] args) {
         
-          ArrayList<String> L1=new ArrayList<String>();
+        ArrayList<String> L1=new ArrayList<String>();
         L1.add("ram");
         L1.add("Amol");
         L1.add("male");
