@@ -34,10 +34,10 @@ public class PersonInfo {
             personList.add(p3);
             personList.add(p4);
 
-            Iterator<PersonInfo> itr = personList.iterator();
+             Iterator<PersonInfo> itr = personList.iterator();
             while(itr.hasNext()) 
             {
-                PersonInfo p = itr.next();
+                 PersonInfo p = itr.next();
                 System.out.println("ID: " + p.id + ", Name: " + p.name + ", Age: " + p.age + ", City: " + p.city);
             }
         
