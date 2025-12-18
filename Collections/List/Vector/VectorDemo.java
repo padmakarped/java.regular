@@ -1,4 +1,4 @@
-package Collections.Vector;
+package Collections.List.Vector;
 
 import java.util.Vector;
 
