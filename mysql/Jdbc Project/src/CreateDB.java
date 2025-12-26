@@ -1,5 +1,4 @@
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,7 +25,7 @@ public class CreateDB {
             // Step 5: Process ResultSet
             while (rs.next()) 
             {
-                System.out.println(rs.getInt(1) + " " +rs.getString(2) + " " +rs.getInt(3));
+                System.out.println("ID :"+rs.getInt(1) + " " +"NAME :"+rs.getString(2) + " " +"AGE :"+rs.getInt(3));
             }
 
             // Step 6: Close resources
