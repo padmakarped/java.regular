@@ -10,6 +10,7 @@ public class WriterDemo {
         try
         {
              Writer w=new FileWriter("output.txt");
+             
              String data="I love You pune.\n";
               w.write(data);
               w.append("Take Care Of Yourself my me.\n");
