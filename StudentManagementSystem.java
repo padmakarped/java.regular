@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 public class StudentManagementSystem {
 
-    static final String FILE_NAME = "\\Users\\HP\\OneDrive\\Desktop\\Students.txt";
-    
+    // File path where student data will be stored
+    static final String FILE_NAME = "C:\\Users\\HP\\OneDrive\\Desktop\\Students.txt";
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -34,7 +35,7 @@ public class StudentManagementSystem {
                     deleteStudent(sc);
                     break;
                 case 5:
-                    System.out.println("Exiting program safely...");
+                    System.out.println("Program exited successfully.");
                     sc.close();
                     System.exit(0);
                 default:
@@ -43,13 +44,19 @@ public class StudentManagementSystem {
         }
     }
 
-
+    // ================= ADD STUDENT =================
     static void addStudent(Scanner sc) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
 
+        try {
+            // Check for duplicate ID
             System.out.print("Enter Student ID: ");
             int id = sc.nextInt();
             sc.nextLine();
+
+            if (isIdExists(id)) {
+                System.out.println("Student ID already exists! Use another ID.");
+                return;
+            }
 
             System.out.print("Enter Student Name: ");
             String name = sc.nextLine();
@@ -57,8 +64,10 @@ public class StudentManagementSystem {
             System.out.print("Enter Student Age: ");
             int age = sc.nextInt();
 
+            BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_NAME, true));
             bw.write(id + "," + name + "," + age);
             bw.newLine();
+            bw.close();
 
             System.out.println("Student added successfully!");
 
@@ -67,13 +76,21 @@ public class StudentManagementSystem {
         }
     }
 
-    
+    // ================= VIEW STUDENTS =================
     static void viewStudents() {
-        try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
+
+        File file = new File(FILE_NAME);
+
+        if (!file.exists()) {
+            System.out.println("No student records found.");
+            return;
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
             String line;
             System.out.println("\nID\tName\tAge");
-            System.out.println("-------------------");
+            System.out.println("------------------------");
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -81,13 +98,15 @@ public class StudentManagementSystem {
             }
 
         } catch (IOException e) {
-            System.out.println("No records found.");
+            System.out.println("Error reading student records.");
         }
     }
 
+    // ================= UPDATE STUDENT =================
     static void updateStudent(Scanner sc) {
+
         File originalFile = new File(FILE_NAME);
-        File tempFile = new File("\\Users\\HP\\OneDrive\\Desktop\\Students.txt");
+        File tempFile = new File("TempStudents.txt");
 
         boolean found = false;
 
@@ -102,6 +121,7 @@ public class StudentManagementSystem {
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
+
                 if (Integer.parseInt(data[0]) == id) {
                     found = true;
 
@@ -132,10 +152,11 @@ public class StudentManagementSystem {
         }
     }
 
-    
+    // ================= DELETE STUDENT =================
     static void deleteStudent(Scanner sc) {
+
         File originalFile = new File(FILE_NAME);
-        File tempFile = new File("\\Users\\HP\\OneDrive\\Desktop\\Students.txt");
+        File tempFile = new File("TempStudents.txt");
 
         boolean found = false;
 
@@ -149,8 +170,9 @@ public class StudentManagementSystem {
 
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
+
                 if (Integer.parseInt(data[0]) == id) {
-                    found = true;
+                    found = true;   // skip record
                     continue;
                 }
                 bw.write(line);
@@ -169,5 +191,24 @@ public class StudentManagementSystem {
             tempFile.delete();
             System.out.println("Student ID not found.");
         }
+    }
+
+    // ================= CHECK UNIQUE ID =================
+    static boolean isIdExists(int id) {
+
+        try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (Integer.parseInt(data[0]) == id) {
+                    return true;
+                }
+            }
+
+        } catch (IOException e) {
+            return false;
+        }
+        return false;
     }
 }
