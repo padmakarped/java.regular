@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class CreateDB {
+public class SimpleStatement {
 
     public static void main(String[] args) {
 
